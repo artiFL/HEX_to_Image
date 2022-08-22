@@ -1,9 +1,5 @@
-import numpy
-import matplotlib as plt
 from PIL import Image
-from os import makedirs
 from os.path import join as osjoin, dirname
-import time
 
 height = 100
 width = 100
@@ -11,18 +7,11 @@ width = 100
 cadr_x_start = 0
 cadr_y_start = 0
 
-
-cadr_x_end = width
-cadr_y_end = height
-
-
 step = width * height * 2
 
-#with open('C:/Users/artif/OneDrive/Рабочий стол/sdhrg.hex', 'rb') as fp:
 with open('C:/Users/artif/OneDrive/Рабочий стол/fl_displey.hex', 'rb') as fp:
     hex_list = fp.read()
     
-
 hex_list = ['{:02X}'.format(b) for b in hex_list]
 
 def twosComplement_hex(hexval):
@@ -50,10 +39,9 @@ while True:
 
     width += 2
     height += 2
-    print(width)
-    index = 0xb0000
     
-    #time.sleep(1)
-    #img.save(osjoin(f"{width}") + ".PNG")
+    print(width)
+
+    index = 0xb0000
 
     img.show()
